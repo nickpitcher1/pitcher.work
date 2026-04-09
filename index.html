@@ -44,22 +44,24 @@
         width: fit-content;
       }
     }
+    :root {
+      --bg-color: #0d1117;
+    }
     body {
       margin: 0;
       font-family: "Space Mono", ui-monospace, monospace;
       font-size: 14px;
       white-space: nowrap;
       color: #fff;
-      background-color: #0d1117;
+      background-color: --bg-color;
     }
     .background {
       width: 100%;
       height: 100lvh;
-      --dot-bg: #0d1117;
       --dot-color: rgba(255, 255, 255, 0.2);
       --dot-size: 1px;
       --dot-space: 50px;
-      background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color) !important;
+      background: linear-gradient(90deg, var(--bg-color) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--bg-color) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color) !important;
       z-index: -1;
       position: fixed;
     }
@@ -85,6 +87,10 @@
       border: 1px solid #4493f8;
       border-radius: 9999px;
       color: #4493f8;
+    }
+    .latest .label {
+      color: #3fb950;
+      border-color: #3fb950;
     }
     .projects,
     .footer p:not(:last-child) {
