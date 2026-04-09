@@ -117,8 +117,7 @@
     .projects a {
       padding-top: 9px;
       visibility: hidden;
-      animation: reveal 0s forwards;
-      animation-delay: calc(1.5s + (var(--i) * 0.1s));
+      animation: reveal 0s calc(1.5s + (var(--i) * 0.1s)) forwards;
       display: block;
     }
     .projects a:first-child {
