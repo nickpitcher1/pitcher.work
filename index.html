@@ -48,6 +48,13 @@
         width: fit-content;
       }
     }
+    @keyframes blink {
+      0%, 50% { visibility: visible; }
+      50.01%, 100% { visibility: hidden; }
+    }
+    @keyframes reveal {
+      to { visibility: visible; }
+    }
     :root {
       --bg-color: #0d1117;
       --dot-color: rgba(255, 255, 255, 0.2);
@@ -102,8 +109,22 @@
     .projects {
       position: relative;
     }
+    .projects::before {
+      content: "_";
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: blink 0.5s steps(1) 3 forwards;
+    }
     .projects a {
       padding-top: 9px;
+    }
+    .projects a {
+      padding-top: 9px;
+      visibility: hidden;
+      animation: show-link 0s forwards;
+      animation-delay: calc(1.5s + (var(--i) * 0.1s));
+      display: block;
     }
     .projects a:first-child {
       padding-top: 0;
@@ -111,55 +132,6 @@
     .divider {
       overflow: hidden;
     }
-
-.projects::before {
-  content: "_";
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: cursor-blink 0.5s steps(1) 3 forwards; /* 3 blinks = 1.5s total */
-}
-
-@keyframes cursor-blink {
-  0%, 50% {
-    visibility: visible;
-  }
-  50.01%, 100% {
-    visibility: hidden;
-  }
-}
-
-.projects a {
-  display: block;
-  visibility: hidden;
-  animation: show-link 0s forwards;
-}
-
-@keyframes show-link {
-  to {
-    visibility: visible;
-  }
-}
-
-.projects a:nth-child(1)  { animation-delay: 1.5s; }
-.projects a:nth-child(2)  { animation-delay: 1.6s; }
-.projects a:nth-child(3)  { animation-delay: 1.7s; }
-.projects a:nth-child(4)  { animation-delay: 1.8s; }
-.projects a:nth-child(5)  { animation-delay: 1.9s; }
-.projects a:nth-child(6)  { animation-delay: 2.0s; }
-.projects a:nth-child(7)  { animation-delay: 2.1s; }
-.projects a:nth-child(8)  { animation-delay: 2.2s; }
-.projects a:nth-child(9)  { animation-delay: 2.3s; }
-.projects a:nth-child(10) { animation-delay: 2.4s; }
-.projects a:nth-child(11) { animation-delay: 2.5s; }
-.projects a:nth-child(12) { animation-delay: 2.6s; }
-.projects a:nth-child(13) { animation-delay: 2.7s; }
-.projects a:nth-child(14) { animation-delay: 2.8s; }
-.projects a:nth-child(15) { animation-delay: 2.9s; }
-.projects a:nth-child(16) { animation-delay: 3.0s; }
-.projects a:nth-child(17) { animation-delay: 3.1s; }
-.projects a:nth-child(18) { animation-delay: 3.2s; }
-.projects a:nth-child(19) { animation-delay: 3.3s; }
   </style>
 </head>
 <body>
@@ -168,25 +140,25 @@
     <div class="latest">
       <span class="label">Latest</span>
       <div class="projects">
-        <a href="https://queenstreetdoctors.co.nz/" target="_blank">queenstreetdoctors.co.nz</a>
-        <a href="https://brandwell.co.nz/" target="_blank">brandwell.co.nz</a>
-        <a href="https://clemenger.nz/" target="_blank">clemenger.nz</a>
-        <a href="https://nativeflowerrings.co.nz/" target="_blank">nativeflowerrings.co.nz</a>
-        <a href="https://alexsutherland.co/" target="_blank">alexsutherland.co</a>
-        <a href="https://lemonade.co.nz/" target="_blank">lemonade.co.nz</a>
-        <a href="http://fabric.partners/" target="_blank">fabric.partners</a>
-        <a href="https://4corners.co.nz/" target="_blank">4corners.co.nz</a>
-        <a href="https://glasscorparchitectural.co.nz/" target="_blank">glasscorparchitectural.co.nz</a>
-        <a href="https://shotovercreative.co.nz/dev/mountain-weddings/" target="_blank">mountainweddngs.nz</a>
-        <a href="https://evmaritime.com/" target="_blank">evmaritime.com</a>
-        <a href="http://benlomond.co.nz/" target="_blank">benlomond.co.nz</a>
-        <a href="http://howler.nz/" target="_blank">howler.nz</a>
-        <a href="https://beyondsurface.co.nz/" target="_blank">beyondsurface.co.nz</a>
-        <a href="https://driverqueenstown.co.nz/" target="_blank">driverqueenstown.co.nz</a>
-        <a href="https://shotovercreative.co.nz/" target="_blank">shotovercreative.co.nz</a>
-        <a href="https://shop.kiwichristmasbooks.org.nz/" target="_blank">shop.kiwichristmasbooks.org.nz</a>
-        <a href="https://showmethework.co/afireinside/" target="_blank">showmethework.co/afireinside</a>
-        <a href="https://thetuesdayclub.co.nz/" target="_blank">thetuesdayclub.co.nz</a>
+        <a style="--i:0" href="https://queenstreetdoctors.co.nz/" target="_blank">queenstreetdoctors.co.nz</a>
+        <a style="--i:1" href="https://brandwell.co.nz/" target="_blank">brandwell.co.nz</a>
+        <a style="--i:2" href="https://clemenger.nz/" target="_blank">clemenger.nz</a>
+        <a style="--i:3" href="https://nativeflowerrings.co.nz/" target="_blank">nativeflowerrings.co.nz</a>
+        <a style="--i:4" href="https://alexsutherland.co/" target="_blank">alexsutherland.co</a>
+        <a style="--i:5" href="https://lemonade.co.nz/" target="_blank">lemonade.co.nz</a>
+        <a style="--i:6" href="http://fabric.partners/" target="_blank">fabric.partners</a>
+        <a style="--i:7" href="https://4corners.co.nz/" target="_blank">4corners.co.nz</a>
+        <a style="--i:8" href="https://glasscorparchitectural.co.nz/" target="_blank">glasscorparchitectural.co.nz</a>
+        <a style="--i:9" href="https://shotovercreative.co.nz/dev/mountain-weddings/" target="_blank">mountainweddngs.nz</a>
+        <a style="--i:10" href="https://evmaritime.com/" target="_blank">evmaritime.com</a>
+        <a style="--i:11" href="http://benlomond.co.nz/" target="_blank">benlomond.co.nz</a>
+        <a style="--i:12" href="http://howler.nz/" target="_blank">howler.nz</a>
+        <a style="--i:13" href="https://beyondsurface.co.nz/" target="_blank">beyondsurface.co.nz</a>
+        <a style="--i:14" href="https://driverqueenstown.co.nz/" target="_blank">driverqueenstown.co.nz</a>
+        <a style="--i:15" href="https://shotovercreative.co.nz/" target="_blank">shotovercreative.co.nz</a>
+        <a style="--i:16" href="https://shop.kiwichristmasbooks.org.nz/" target="_blank">shop.kiwichristmasbooks.org.nz</a>
+        <a style="--i:17" href="https://showmethework.co/afireinside/" target="_blank">showmethework.co/afireinside</a>
+        <a style="--i:18" href="https://thetuesdayclub.co.nz/" target="_blank">thetuesdayclub.co.nz</a>
       </div>
     </div>
     <div class="footer">
