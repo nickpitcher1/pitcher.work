@@ -108,57 +108,68 @@
     .divider {
       overflow: hidden;
     }
-    .projects::before {
+    /* Cursor */
+.projects::before {
   content: "_";
   display: block;
   font-family: monospace;
-  animation: cursor-blink 0.4s steps(1) 6;
+  animation: cursor-blink 0.3s steps(1) 6 forwards; /* ~1.8s total */
 }
 
+/* Blink */
 @keyframes cursor-blink {
-  0%, 50% {
-    visibility: visible;
-  }
-  50.01%, 100% {
-    visibility: hidden;
-  }
+  0%, 50% { visibility: visible; }
+  50.01%, 100% { visibility: hidden; }
 }
 
+/* Remove cursor after blinking */
+.projects {
+  animation: remove-cursor 0s forwards;
+  animation-delay: 1.8s;
+}
+
+@keyframes remove-cursor {
+  to { }
+}
+
+.projects::before {
+  animation-fill-mode: forwards;
+}
+
+/* Links */
 .projects a {
   display: block;
   visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  margin: 0;
-  animation: reveal-link 0s forwards;
+  animation: show-link 0s forwards;
 }
 
-@keyframes reveal-link {
+/* Instant reveal */
+@keyframes show-link {
   to {
     visibility: visible;
-    height: 1.5em;
   }
 }
 
-.projects a:nth-child(1)  { animation-delay: 2.4s; }
-.projects a:nth-child(2)  { animation-delay: 2.6s; }
-.projects a:nth-child(3)  { animation-delay: 2.8s; }
-.projects a:nth-child(4)  { animation-delay: 3.0s; }
-.projects a:nth-child(5)  { animation-delay: 3.2s; }
-.projects a:nth-child(6)  { animation-delay: 3.4s; }
-.projects a:nth-child(7)  { animation-delay: 3.6s; }
-.projects a:nth-child(8)  { animation-delay: 3.8s; }
-.projects a:nth-child(9)  { animation-delay: 4.0s; }
-.projects a:nth-child(10) { animation-delay: 4.2s; }
-.projects a:nth-child(11) { animation-delay: 4.4s; }
-.projects a:nth-child(12) { animation-delay: 4.6s; }
-.projects a:nth-child(13) { animation-delay: 4.8s; }
-.projects a:nth-child(14) { animation-delay: 5.0s; }
-.projects a:nth-child(15) { animation-delay: 5.2s; }
-.projects a:nth-child(16) { animation-delay: 5.4s; }
-.projects a:nth-child(17) { animation-delay: 5.6s; }
-.projects a:nth-child(18) { animation-delay: 5.8s; }
-.projects a:nth-child(19) { animation-delay: 6.0s; }
+/* Start AFTER cursor is gone (1.8s), then 0.1s stagger */
+.projects a:nth-child(1)  { animation-delay: 1.8s; }
+.projects a:nth-child(2)  { animation-delay: 1.9s; }
+.projects a:nth-child(3)  { animation-delay: 2.0s; }
+.projects a:nth-child(4)  { animation-delay: 2.1s; }
+.projects a:nth-child(5)  { animation-delay: 2.2s; }
+.projects a:nth-child(6)  { animation-delay: 2.3s; }
+.projects a:nth-child(7)  { animation-delay: 2.4s; }
+.projects a:nth-child(8)  { animation-delay: 2.5s; }
+.projects a:nth-child(9)  { animation-delay: 2.6s; }
+.projects a:nth-child(10) { animation-delay: 2.7s; }
+.projects a:nth-child(11) { animation-delay: 2.8s; }
+.projects a:nth-child(12) { animation-delay: 2.9s; }
+.projects a:nth-child(13) { animation-delay: 3.0s; }
+.projects a:nth-child(14) { animation-delay: 3.1s; }
+.projects a:nth-child(15) { animation-delay: 3.2s; }
+.projects a:nth-child(16) { animation-delay: 3.3s; }
+.projects a:nth-child(17) { animation-delay: 3.4s; }
+.projects a:nth-child(18) { animation-delay: 3.5s; }
+.projects a:nth-child(19) { animation-delay: 3.6s; }
   </style>
 </head>
 <body>
