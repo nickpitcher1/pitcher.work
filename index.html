@@ -48,26 +48,12 @@
         width: fit-content;
       }
     }
-    @keyframes driftX {
-      0% { --x: 20%; }
-      50% { --x: 80%; }
-      100% { --x: 20%; }
-    }
-    @keyframes driftY {
-      0% { --y: 30%; }
-      50% { --y: 70%; }
-      100% { --y: 30%; }
-    }
     @keyframes blink {
       0%, 49% { visibility: visible; }
       50%, 100% { visibility: hidden; }
     }
     @keyframes reveal {
       to { visibility: visible; }
-    }
-    :root {
-      --bg-color: #0d1117;
-      --dot-color: rgba(255, 255, 255, 0.2);
     }
     body {
       margin: 0;
@@ -76,15 +62,14 @@
       line-height: 1.5;
       white-space: nowrap;
       color: #fff;
-      background-color: var(--bg-color);
+      background-color: #0d1117;
     }
     .background {
       width: 100%;
       height: 100lvh;
       background: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px) 0 0 / 18px 18px repeat;
-      mask-image: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #000 0%,  #000 18%, rgba(0,0,0,0.5) 40%, transparent 70%);
-      -webkit-mask-image: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #000 0%,  #000 18%, rgba(0,0,0,0.5) 40%, transparent 70%);
-      animation: driftX 28s linear infinite, driftY 36s linear infinite;
+      mask-image: radial-gradient(circle, #000 25%, transparent 75%);
+      -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 75%);
       z-index: -1;
       position: fixed;
     }
