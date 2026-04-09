@@ -49,8 +49,8 @@
       }
     }
     @keyframes blink {
-      0%, 50% { visibility: visible; }
-      100% { visibility: hidden; }
+      0%, 49% { visibility: visible; }
+      50%, 100% { visibility: hidden; }
     }
     @keyframes reveal {
       to { visibility: visible; }
@@ -111,7 +111,7 @@
     }
     .projects::before {
       content: "_";
-      animation: blink 0.5s steps(1) 3 forwards;
+      animation: blink 0.5s 3 forwards;
       position: absolute;
     }
     .projects a {
