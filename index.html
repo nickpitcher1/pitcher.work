@@ -101,7 +101,6 @@
     }
     .projects a {
       padding-top: 9px;
-      display: block;
     }
     .projects a:first-child {
       padding-top: 0;
@@ -109,6 +108,53 @@
     .divider {
       overflow: hidden;
     }
+    /* Container cursor */
+.projects::before {
+  content: "_";
+  display: block;
+  font-family: monospace;
+  animation: cursor-blink 0.4s steps(1) 6; /* 3 blinks = 6 steps */
+}
+
+/* Blink on/off */
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Links initially hidden */
+.projects a {
+  display: none;
+  animation: reveal 0s forwards;
+}
+
+/* Reveal keyframe */
+@keyframes reveal {
+  to {
+    display: block;
+  }
+}
+
+/* Delay everything until cursor finishes (~2.4s) */
+.projects a:nth-child(1)  { animation-delay: 2.4s; }
+.projects a:nth-child(2)  { animation-delay: 2.6s; }
+.projects a:nth-child(3)  { animation-delay: 2.8s; }
+.projects a:nth-child(4)  { animation-delay: 3.0s; }
+.projects a:nth-child(5)  { animation-delay: 3.2s; }
+.projects a:nth-child(6)  { animation-delay: 3.4s; }
+.projects a:nth-child(7)  { animation-delay: 3.6s; }
+.projects a:nth-child(8)  { animation-delay: 3.8s; }
+.projects a:nth-child(9)  { animation-delay: 4.0s; }
+.projects a:nth-child(10) { animation-delay: 4.2s; }
+.projects a:nth-child(11) { animation-delay: 4.4s; }
+.projects a:nth-child(12) { animation-delay: 4.6s; }
+.projects a:nth-child(13) { animation-delay: 4.8s; }
+.projects a:nth-child(14) { animation-delay: 5.0s; }
+.projects a:nth-child(15) { animation-delay: 5.2s; }
+.projects a:nth-child(16) { animation-delay: 5.4s; }
+.projects a:nth-child(17) { animation-delay: 5.6s; }
+.projects a:nth-child(18) { animation-delay: 5.8s; }
+.projects a:nth-child(19) { animation-delay: 6.0s; }
   </style>
 </head>
 <body>
