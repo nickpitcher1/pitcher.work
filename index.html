@@ -10,13 +10,15 @@
   <style type="text/css">
     @media (max-width: 569px) {
       body {
+        font-size: 13px !important;
+      }
+      .wrapper {
         padding-left: 18px !important;
         padding-right: 18px !important;
-        font-size: 13px !important;
       }
     }
     @media (min-width: 570px) {
-      body {
+      .wrapper {
         max-width: 500px;
         min-height: 100vh;
         margin: 0 auto;
@@ -24,13 +26,19 @@
       }
     }
     body {
-      padding: 36px;
       font-family: "Space Mono", ui-monospace, monospace;
       font-size: 14px;
       white-space: nowrap;
       color: #fff;
       background-color: #0d1117;
+    }
+    .wrapper {
+      padding: 36px;
       display: flex;
+      display: flex;
+      flex-direction: column;
+      row-gap: 54px;
+      box-sizing: border-box;
       flex-direction: column;
       row-gap: 54px;
       box-sizing: border-box;
@@ -62,32 +70,34 @@
   </style>
 </head>
 <body>
-  <div class="latest">
-    <span class="label">Latest</span>
-    <p><a href="https://queenstreetdoctors.co.nz/" target="_blank">queenstreetdoctors.co.nz</a></p>
-    <p><a href="https://brandwell.co.nz/" target="_blank">brandwell.co.nz</a></p>
-    <p><a href="https://clemenger.nz/" target="_blank">clemenger.nz</a></p>
-    <p><a href="https://nativeflowerrings.co.nz/" target="_blank">nativeflowerrings.co.nz</a></p>
-    <p><a href="https://alexsutherland.co/" target="_blank">alexsutherland.co</a></p>
-    <p><a href="https://lemonade.co.nz/" target="_blank">lemonade.co.nz</a></p>
-    <p><a href="http://fabric.partners/" target="_blank">fabric.partners</a></p>
-    <p><a href="https://4corners.co.nz/" target="_blank">4corners.co.nz</a></p>
-    <p><a href="https://glasscorparchitectural.co.nz/" target="_blank">glasscorparchitectural.co.nz</a></p>
-    <p><a href="https://shotovercreative.co.nz/dev/mountain-weddings/" target="_blank">mountainweddngs.nz</a></p>
-    <p><a href="https://evmaritime.com/" target="_blank">evmaritime.com</a></p>
-    <p><a href="http://benlomond.co.nz/" target="_blank">benlomond.co.nz</a></p>
-    <p><a href="http://howler.nz/" target="_blank">howler.nz</a></p>
-    <p><a href="https://beyondsurface.co.nz/" target="_blank">beyondsurface.co.nz</a></p>
-    <p><a href="https://driverqueenstown.co.nz/" target="_blank">driverqueenstown.co.nz</a></p>
-    <p><a href="https://shotovercreative.co.nz/" target="_blank">shotovercreative.co.nz</a></p>
-    <p><a href="https://shop.kiwichristmasbooks.org.nz/" target="_blank">shop.kiwichristmasbooks.org.nz</a></p>
-    <p><a href="https://showmethework.co/afireinside/" target="_blank">showmethework.co/afireinside</a></p>
-    <p><a href="https://thetuesdayclub.co.nz/" target="_blank">thetuesdayclub.co.nz</a></p>
-  </div>
-  <div class="footer">
-    <div class="divider">........................................</div>
-    <p><b>Nick Pitcher</b> <span class="label">Dev</span></p>
-    <p>m. <a href="tel:+64220771337">022 077 1337</a><br>e. <a href="mailto:nick@pitcher.work">nick@pitcher.work</a></p>
+  <div class="wrapper">
+    <div class="latest">
+      <span class="label">Latest</span>
+      <p><a href="https://queenstreetdoctors.co.nz/" target="_blank">queenstreetdoctors.co.nz</a></p>
+      <p><a href="https://brandwell.co.nz/" target="_blank">brandwell.co.nz</a></p>
+      <p><a href="https://clemenger.nz/" target="_blank">clemenger.nz</a></p>
+      <p><a href="https://nativeflowerrings.co.nz/" target="_blank">nativeflowerrings.co.nz</a></p>
+      <p><a href="https://alexsutherland.co/" target="_blank">alexsutherland.co</a></p>
+      <p><a href="https://lemonade.co.nz/" target="_blank">lemonade.co.nz</a></p>
+      <p><a href="http://fabric.partners/" target="_blank">fabric.partners</a></p>
+      <p><a href="https://4corners.co.nz/" target="_blank">4corners.co.nz</a></p>
+      <p><a href="https://glasscorparchitectural.co.nz/" target="_blank">glasscorparchitectural.co.nz</a></p>
+      <p><a href="https://shotovercreative.co.nz/dev/mountain-weddings/" target="_blank">mountainweddngs.nz</a></p>
+      <p><a href="https://evmaritime.com/" target="_blank">evmaritime.com</a></p>
+      <p><a href="http://benlomond.co.nz/" target="_blank">benlomond.co.nz</a></p>
+      <p><a href="http://howler.nz/" target="_blank">howler.nz</a></p>
+      <p><a href="https://beyondsurface.co.nz/" target="_blank">beyondsurface.co.nz</a></p>
+      <p><a href="https://driverqueenstown.co.nz/" target="_blank">driverqueenstown.co.nz</a></p>
+      <p><a href="https://shotovercreative.co.nz/" target="_blank">shotovercreative.co.nz</a></p>
+      <p><a href="https://shop.kiwichristmasbooks.org.nz/" target="_blank">shop.kiwichristmasbooks.org.nz</a></p>
+      <p><a href="https://showmethework.co/afireinside/" target="_blank">showmethework.co/afireinside</a></p>
+      <p><a href="https://thetuesdayclub.co.nz/" target="_blank">thetuesdayclub.co.nz</a></p>
+    </div>
+    <div class="footer">
+      <div class="divider">........................................</div>
+      <p><b>Nick Pitcher</b> <span class="label">Dev</span></p>
+      <p>m. <a href="tel:+64220771337">022 077 1337</a><br>e. <a href="mailto:nick@pitcher.work">nick@pitcher.work</a></p>
+    </div>
   </div>
 </body>
 </html>
