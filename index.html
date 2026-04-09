@@ -108,32 +108,38 @@
     .divider {
       overflow: hidden;
     }
-    /* Cursor */
-.projects::before {
+    .projects::before {
   content: "_";
   display: block;
+  font-family: monospace;
   animation: cursor-blink 0.4s steps(1) 6;
 }
 
-/* Blink */
 @keyframes cursor-blink {
-  0%, 50% { opacity: 1; }
-  50.01%, 100% { opacity: 0; }
+  0%, 50% {
+    visibility: visible;
+  }
+  50.01%, 100% {
+    visibility: hidden;
+  }
 }
 
-/* Links hidden */
 .projects a {
-  display: none;
-  animation: reveal 0.001s steps(1, end) forwards;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  animation: reveal-link 0s forwards;
 }
 
-/* This is the key */
-@keyframes reveal {
-  from { display: none; }
-  to   { display: block; }
+@keyframes reveal-link {
+  to {
+    visibility: visible;
+    height: 1.5em;
+  }
 }
 
-/* Delay after cursor (2.4s), then stagger */
 .projects a:nth-child(1)  { animation-delay: 2.4s; }
 .projects a:nth-child(2)  { animation-delay: 2.6s; }
 .projects a:nth-child(3)  { animation-delay: 2.8s; }
