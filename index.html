@@ -36,13 +36,12 @@
     .background {
       width: 100%;
       height: 100%;
-      top: 0;
       --dot-bg: #0d1117;
       --dot-color: rgba(255, 255, 255, 0.3);
       --dot-size: 1px;
       --dot-space: 50px;
       background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color) !important;
-      position: absolute;
+      position: fixed;
     }
     .container {
       padding: 36px;
@@ -51,9 +50,10 @@
       row-gap: 54px;
       box-sizing: border-box;
       position: relative;
+      z-index: 1;
     }
     p {
-      margin: 18px 0 0 0;
+      margin: 9px 0 0 0;
     }
     a {
       color: inherit;
@@ -67,10 +67,8 @@
       border-radius: 9999px;
       color: #4493f8;
     }
-    .latest p {
-      margin-top: 9px;
-    }
-    .latest .label + p {
+    .latest .label + p,
+    .footer .divider + p {
       margin-top: 18px;
     }
     .divider {
@@ -79,7 +77,6 @@
   </style>
 </head>
 <body>
-  <div class="background"></div>
   <div class="container">
     <div class="latest">
       <span class="label">Latest</span>
@@ -106,8 +103,10 @@
     <div class="footer">
       <div class="divider">........................................</div>
       <p><b>Nick Pitcher</b> <span class="label">Dev</span></p>
-      <p>m. <a href="tel:+64220771337">022 077 1337</a><br>e. <a href="mailto:nick@pitcher.work">nick@pitcher.work</a></p>
+      <p>m. <a href="tel:+64220771337">022 077 1337</a></p>
+      <p>e. <a href="mailto:nick@pitcher.work">nick@pitcher.work</a></p>
     </div>
   </div>
+  <div class="background"></div>
 </body>
 </html>
