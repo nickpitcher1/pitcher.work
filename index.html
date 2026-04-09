@@ -25,9 +25,6 @@
         justify-content: center;
       }
     }
-    html {
-      background-color: #0d1117;
-    }
     body {
       margin: 0;
       font-family: "Space Mono", ui-monospace, monospace;
@@ -39,12 +36,12 @@
     .background {
       width: 100%;
       height: 100%;
+      top: 0;
       --dot-bg: #0d1117;
       --dot-color: rgba(255, 255, 255, 0.3);
       --dot-size: 1px;
       --dot-space: 50px;
       background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space), var(--dot-color) !important;
-      background-color: #0d1117;
       position: absolute;
     }
     .container {
